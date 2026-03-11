@@ -3,11 +3,23 @@ name: CICD
 
 #Manual click (Delivery) workflow whenever user needs
 on:
-  push:
-      branches: [main]
+  workflow_dispatch:
+      inputs:
+          environment:
+              description: This is the env value where the workflow runs
+              default: 'dev'
+              required: true
+              type: choice
+              options:
+                - dev
+                - prod
+                - staging
 
-      paths:
-          - '**.html'
+  #push:
+      #branches: [main]
+
+      #paths:
+         # - '**.html'
 
 #These are the jobs inside the workflow_call
 jobs:
