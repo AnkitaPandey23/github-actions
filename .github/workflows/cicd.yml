@@ -3,7 +3,11 @@ name: CICD
 
 #Manual click (Delivery) workflow whenever user needs
 on:
-  workflow_dispatch:
+  push:
+      branches: [main]
+
+      paths:
+          - '**.html'
 
 #These are the jobs inside the workflow_call
 jobs:
