@@ -1,106 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ankita Pandey | DevOps Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0f172a;color:#e2e8f0}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 80px;background:#020617}
-header h1{font-size:22px;color:#38bdf8}
-nav a{margin-left:25px;text-decoration:none;color:#e2e8f0;font-weight:500}
-.hero{height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.hero h2{font-size:48px;margin-bottom:10px}
-.hero p{font-size:18px;color:#94a3b8;margin-bottom:20px}
-.btn{background:#38bdf8;color:#020617;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600}
-.section{padding:80px}
-.section h2{text-align:center;margin-bottom:40px;font-size:32px}
-.about{max-width:800px;margin:auto;text-align:center;color:#94a3b8;line-height:1.6}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.skill{background:#1e293b;padding:25px;border-radius:12px;text-align:center}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.project{background:#1e293b;padding:25px;border-radius:12px}
-.project h3{margin-bottom:10px}
-.contact{text-align:center}
-footer{text-align:center;padding:25px;background:#020617;color:#94a3b8}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:#020617;
+position:sticky;
+top:0;
+}
+
+nav h2{
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero h1{
+font-size:60px;
+color:#38bdf8;
+}
+
+.hero p{
+margin-top:10px;
+font-size:20px;
+opacity:0.8;
+}
+
+.btn{
+margin-top:30px;
+padding:12px 25px;
+background:#38bdf8;
+color:black;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 10%;
+}
+
+section h2{
+text-align:center;
+margin-bottom:40px;
+font-size:36px;
+color:#38bdf8;
+}
+
+/* SKILLS */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+}
+
+.skill-card{
+background:#1e293b;
+padding:30px;
+text-align:center;
+border-radius:12px;
+transition:0.3s;
+}
+
+.skill-card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
+
+/* PROJECTS */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.project-card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:scale(1.05);
+background:#334155;
+}
+
+.project-card h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+color:#38bdf8;
+text-decoration:none;
+display:block;
+margin:10px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+margin-top:40px;
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-<h1>Ankita Pandey</h1>
 <nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+<h2>Ankita.dev</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
-</header>
 
 <section class="hero">
-<h2>DevOps & Cloud Engineer</h2>
-<p>Building scalable infrastructure, CI/CD pipelines and cloud native systems.</p>
-<a class="btn" href="#projects">View My Work</a>
+<h1>Ankita Pandey</h1>
+<p>DevOps Engineer • Cloud • Automation</p>
+<button class="btn">View My Work</button>
 </section>
 
-<section class="section" id="about">
+<section id="about">
 <h2>About Me</h2>
-<p class="about">
-I am a DevOps engineer passionate about automation, cloud infrastructure and platform engineering. I focus on building reliable CI/CD pipelines, containerized workloads and scalable systems using modern DevOps practices.
+<p style="text-align:center;max-width:700px;margin:auto;">
+I'm a DevOps enthusiast passionate about cloud computing, automation,
+and scalable infrastructure. I enjoy building CI/CD pipelines,
+containerizing applications, and deploying cloud-native systems.
 </p>
 </section>
 
-<section class="section" id="skills">
+<section id="skills">
 <h2>Technical Skills</h2>
-<div class="skills">
-<div class="skill">Linux</div>
-<div class="skill">Networking</div>
-<div class="skill">Docker</div>
-<div class="skill">Kubernetes</div>
-<div class="skill">Terraform</div>
-<div class="skill">AWS</div>
-<div class="skill">Git & GitHub</div>
-<div class="skill">GitHub Actions</div>
-<div class="skill">Jenkins</div>
-<div class="skill">CI/CD</div>
-<div class="skill">Monitoring</div>
-<div class="skill">Shell Scripting</div>
+
+<div class="skills-grid">
+
+<div class="skill-card">Linux</div>
+<div class="skill-card">Git</div>
+<div class="skill-card">Docker</div>
+<div class="skill-card">Kubernetes</div>
+<div class="skill-card">Terraform</div>
+<div class="skill-card">AWS</div>
+<div class="skill-card">Jenkins</div>
+<div class="skill-card">GitHub Actions</div>
+<div class="skill-card">Networking</div>
+
 </div>
+
 </section>
 
-<section class="section" id="projects">
+<section id="projects">
+
 <h2>Projects</h2>
-<div class="projects">
-<div class="project">
-<h3>Flask App Deployment on AWS ECS</h3>
-<p>Containerized a Flask application using Docker and deployed it on AWS ECS with CI/CD automation.</p>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>AI Bank App DevOps</h3>
+<p>Dockerized banking application with CI/CD pipeline and automated deployment.</p>
 </div>
 
-<div class="project">
-<h3>Bank Application DevOps Pipeline</h3>
-<p>Implemented CI/CD pipeline using GitHub Actions, Docker and Kubernetes.</p>
+<div class="project-card">
+<h3>Flask ECS Deployment</h3>
+<p>Containerized Flask application deployed on AWS ECS using Docker.</p>
 </div>
 
-<div class="project">
-<h3>Infrastructure as Code</h3>
-<p>Provisioned cloud infrastructure using Terraform with reusable modules.</p>
+<div class="project-card">
+<h3>DevOps Pipeline</h3>
+<p>CI/CD pipeline using GitHub Actions, Docker, and Kubernetes deployment.</p>
 </div>
+
 </div>
+
 </section>
 
-<section class="section" id="contact">
+<section id="contact" class="contact">
+
 <h2>Contact</h2>
-<div class="contact">
-<p>Email: ankita@example.com</p>
-<p>GitHub: github.com/AnkitaPandey23</p>
-<p>LinkedIn: linkedin.com</p>
-</div>
+
+<a href="mailto:ankita@example.com">Email</a>
+<a href="https://github.com/AnkitaPandey23">GitHub</a>
+<a href="#">LinkedIn</a>
+
 </section>
 
 <footer>
-<p>© 2026 Ankita Pandey | DevOps Engineer</p>
+
+© 2026 Ankita Pandey • DevOps Engineer
+
 </footer>
 
 </body>
