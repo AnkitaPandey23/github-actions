@@ -1,397 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ankita Pandey | DevOps Engineer</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-/* GLOBAL STYLES */
+<style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family: 'Segoe UI', sans-serif;
 }
 
 body{
 background:#0f172a;
 color:white;
-line-height:1.6;
+scroll-behavior:smooth;
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
+/* Navbar */
 
-section{
-padding:80px 10%;
-}
-
-/* NAVBAR */
-
-nav{
+header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
+padding:20px 8%;
 background:#020617;
 position:sticky;
 top:0;
-z-index:100;
+z-index:1000;
 }
 
-nav h2{
-color:#38bdf8;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:white;
+font-size:14px;
+transition:0.3s;
 }
 
 nav a:hover{
 color:#38bdf8;
 }
 
-/* HERO */
+/* Hero */
 
 .hero{
-height:90vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#020617,#1e293b,#020617);
+
+background:linear-gradient(120deg,#0f172a,#1e293b,#020617);
 }
 
 .hero h1{
 font-size:60px;
+}
+
+.hero span{
 color:#38bdf8;
 }
 
 .hero p{
-margin-top:10px;
-font-size:20px;
-max-width:700px;
-opacity:0.85;
-}
-
-.hero-buttons{
-margin-top:25px;
+margin-top:15px;
+color:#cbd5f5;
 }
 
 .btn{
+display:inline-block;
+margin-top:25px;
 padding:12px 25px;
-border-radius:8px;
-margin:10px;
-font-weight:600;
-transition:0.3s;
-}
-
-.github{
 background:#38bdf8;
 color:black;
-}
-
-.linkedin{
-border:1px solid #38bdf8;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+background:white;
 }
 
-/* SECTION TITLES */
+/* Sections */
 
-.section-title{
+section{
+padding:80px 10%;
+}
+
+.title{
 text-align:center;
-margin-bottom:40px;
-font-size:36px;
-color:#38bdf8;
+font-size:34px;
+margin-bottom:50px;
 }
 
-/* ABOUT */
+/* About */
 
 .about{
-max-width:800px;
+max-width:750px;
 margin:auto;
 text-align:center;
+color:#cbd5f5;
+line-height:1.8;
 }
 
-/* SKILLS */
+/* Skills */
 
-.skills-grid{
+.skills{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:25px;
 }
 
-.skill-card{
-background:#1e293b;
+.skill{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
 padding:30px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
 transition:0.3s;
 }
 
-.skill-card i{
-font-size:40px;
-margin-bottom:15px;
+.skill:hover{
+transform:translateY(-8px);
+background:#1e293b;
+}
+
+.skill i{
+font-size:32px;
+margin-bottom:10px;
 color:#38bdf8;
 }
 
-.skill-card:hover{
-transform:translateY(-8px);
-background:#334155;
+/* DevOps tools */
+
+.tools{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:20px;
+text-align:center;
 }
 
-/* PROJECTS */
+.tools img{
+width:60px;
+}
 
-.projects-grid{
+/* Projects */
+
+.projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
-.project-card{
-background:#1e293b;
+.project{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
 padding:25px;
 border-radius:12px;
 transition:0.3s;
 }
 
-.project-card h3{
-color:#38bdf8;
-margin-bottom:10px;
-}
-
-.project-card:hover{
-transform:scale(1.05);
-background:#334155;
-}
-
-/* DEVOPS TOOLS */
-
-.tools-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-gap:25px;
-text-align:center;
-}
-
-.tool{
+.project:hover{
+transform:translateY(-8px);
 background:#1e293b;
-padding:20px;
-border-radius:10px;
-transition:0.3s;
 }
 
-.tool i{
-font-size:35px;
-color:#38bdf8;
+.project p{
+color:#cbd5f5;
 }
 
-.tool:hover{
-background:#334155;
-transform:translateY(-5px);
-}
-
-/* CONTACT */
+/* Contact */
 
 .contact{
 text-align:center;
 }
 
-.contact a{
-display:block;
-margin:10px;
-color:#38bdf8;
-}
-
-/* FOOTER */
+/* Footer */
 
 footer{
 text-align:center;
-padding:20px;
+padding:25px;
 background:#020617;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:40px;
-}
-
-nav{
-flex-direction:column;
-gap:10px;
-}
-
+margin-top:50px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<header>
+
+<h2>Ankita</h2>
 
 <nav>
-<h2>Ankita.dev</h2>
-
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#tools">Tools</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#tools">Tools</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO SECTION -->
+</header>
+
 
 <section class="hero">
 
-<h1>Ankita Pandey</h1>
+<h1>Hi, I'm <span>Ankita Pandey</span></h1>
 
-<p>DevOps Engineer building scalable cloud infrastructure and CI/CD pipelines</p>
+<h2><span id="typing"></span></h2>
 
-<div class="hero-buttons">
+<p>DevOps Engineer building scalable cloud infrastructure and CI/CD pipelines.</p>
 
-<a href="https://github.com/AnkitaPandey23" class="btn github"><i class="fab fa-github"></i> GitHub</a>
-
-<a href="#" class="btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
-
-</div>
+<a class="btn" href="https://github.com/AnkitaPandey23">GitHub</a>
 
 </section>
 
-<!-- ABOUT -->
 
 <section id="about">
 
-<h2 class="section-title">About Me</h2>
+<h2 class="title">About Me</h2>
 
 <p class="about">
-DevOps Engineer with 3.5 years of experience working with cloud infrastructure,
-automation and CI/CD pipelines. Passionate about building reliable,
-scalable systems using containerization, Kubernetes orchestration,
-and infrastructure as code. Skilled in cloud platforms, automation
-and modern DevOps practices to improve deployment efficiency and system reliability.
+DevOps Engineer with 3.5 years of experience in Linux, Docker,
+Kubernetes and cloud technologies. Passionate about infrastructure
+automation, scalable deployments and CI/CD pipelines.
 </p>
 
 </section>
 
-<!-- SKILLS -->
 
 <section id="skills">
 
-<h2 class="section-title">Skills</h2>
+<h2 class="title">Skills</h2>
 
-<div class="skills-grid">
+<div class="skills">
 
-<div class="skill-card"><i class="fab fa-linux"></i><p>Linux</p></div>
-<div class="skill-card"><i class="fa-solid fa-network-wired"></i><p>Networking</p></div>
-<div class="skill-card"><i class="fab fa-docker"></i><p>Docker</p></div>
-<div class="skill-card"><i class="fa-solid fa-dharmachakra"></i><p>Kubernetes</p></div>
-<div class="skill-card"><i class="fa-solid fa-cloud"></i><p>AWS</p></div>
-<div class="skill-card"><i class="fa-solid fa-cloud"></i><p>Azure</p></div>
-<div class="skill-card"><i class="fa-solid fa-code-branch"></i><p>Terraform</p></div>
-<div class="skill-card"><i class="fa-solid fa-gears"></i><p>Jenkins</p></div>
-<div class="skill-card"><i class="fab fa-github"></i><p>GitHub Actions</p></div>
-<div class="skill-card"><i class="fa-solid fa-arrows-rotate"></i><p>CI/CD</p></div>
+<div class="skill"><i class="fab fa-linux"></i><p>Linux</p></div>
+<div class="skill"><i class="fab fa-docker"></i><p>Docker</p></div>
+<div class="skill"><i class="fas fa-dharmachakra"></i><p>Kubernetes</p></div>
+<div class="skill"><i class="fas fa-cloud"></i><p>AWS / Azure</p></div>
+<div class="skill"><i class="fas fa-code-branch"></i><p>Git</p></div>
+<div class="skill"><i class="fas fa-cogs"></i><p>Terraform</p></div>
+<div class="skill"><i class="fas fa-rocket"></i><p>CI/CD</p></div>
+<div class="skill"><i class="fas fa-network-wired"></i><p>Networking</p></div>
 
 </div>
 
 </section>
 
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h2 class="section-title">Projects</h2>
-
-<div class="projects-grid">
-
-<div class="project-card">
-<h3>AI Bank App DevOps Pipeline</h3>
-<p>Built CI/CD pipeline using Docker, GitHub Actions and automated deployments.</p>
-<a href="https://github.com/AnkitaPandey23">View on GitHub</a>
-</div>
-
-<div class="project-card">
-<h3>Flask App on AWS ECS</h3>
-<p>Containerized Flask application deployed using AWS ECS and Docker.</p>
-<a href="https://github.com/AnkitaPandey23">View on GitHub</a>
-</div>
-
-<div class="project-card">
-<h3>Kubernetes Deployment</h3>
-<p>Deployed containerized microservices application using Kubernetes.</p>
-<a href="https://github.com/AnkitaPandey23">View on GitHub</a>
-</div>
-
-</div>
-
-</section>
-
-<!-- DEVOPS TOOLS -->
 
 <section id="tools">
 
-<h2 class="section-title">DevOps Tools</h2>
+<h2 class="title">DevOps Tools</h2>
 
-<div class="tools-grid">
+<div class="tools">
 
-<div class="tool"><i class="fab fa-docker"></i><p>Docker</p></div>
-<div class="tool"><i class="fa-solid fa-dharmachakra"></i><p>Kubernetes</p></div>
-<div class="tool"><i class="fab fa-aws"></i><p>AWS</p></div>
-<div class="tool"><i class="fab fa-github"></i><p>GitHub</p></div>
-<div class="tool"><i class="fa-solid fa-code-branch"></i><p>Terraform</p></div>
-<div class="tool"><i class="fa-solid fa-gears"></i><p>Jenkins</p></div>
-<div class="tool"><i class="fa-solid fa-server"></i><p>Linux</p></div>
-<div class="tool"><i class="fa-solid fa-network-wired"></i><p>Networking</p></div>
+<img src="https://skillicons.dev/icons?i=docker">
+<img src="https://skillicons.dev/icons?i=kubernetes">
+<img src="https://skillicons.dev/icons?i=aws">
+<img src="https://skillicons.dev/icons?i=azure">
+<img src="https://skillicons.dev/icons?i=terraform">
+<img src="https://skillicons.dev/icons?i=jenkins">
+<img src="https://skillicons.dev/icons?i=github">
+<img src="https://skillicons.dev/icons?i=linux">
 
 </div>
 
 </section>
 
-<!-- CONTACT -->
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>AI Bank App DevOps</h3>
+<p>CI/CD pipeline using Docker, Jenkins and GitHub Actions.</p>
+<a class="btn" href="https://github.com/AnkitaPandey23">View</a>
+</div>
+
+<div class="project">
+<h3>Flask App on AWS ECS</h3>
+<p>Containerized Flask application deployed using AWS ECS.</p>
+<a class="btn" href="https://github.com/AnkitaPandey23">View</a>
+</div>
+
+<div class="project">
+<h3>Kubernetes Deployment</h3>
+<p>Dockerized application deployed to Kubernetes cluster.</p>
+<a class="btn" href="https://github.com/AnkitaPandey23">View</a>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="title">GitHub Stats</h2>
+
+<p align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=AnkitaPandey23&show_icons=true&theme=tokyonight">
+
+</p>
+
+</section>
+
 
 <section id="contact">
 
-<h2 class="section-title">Contact</h2>
+<h2 class="title">Contact</h2>
 
 <div class="contact">
 
-<p>Email: ankita@example.com</p>
+<p>Connect with me on GitHub</p>
 
-<a href="https://github.com/AnkitaPandey23">GitHub</a>
+<a class="btn" href="https://github.com/AnkitaPandey23">
+<i class="fab fa-github"></i> GitHub
+</a>
 
 </div>
 
 </section>
 
+
 <footer>
 
-© 2026 Ankita Pandey • DevOps Engineer
+<p>© 2026 Ankita Pandey | DevOps Engineer</p>
 
 </footer>
 
+
+<script>
+
+var typed = new Typed("#typing", {
+strings: ["DevOps Engineer", "Cloud Engineer", "Automation Enthusiast"],
+typeSpeed: 60,
+backSpeed: 40,
+loop: true
+});
+
+</script>
+
 </body>
+
 </html>
