@@ -1,0 +1,33 @@
+name: Portfolio
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+permissions:
+    pages: write       #Permission required to deploy website on GitHub Pages 
+    id-token: write    # Required to verify the deployment is from trusted workflow
+    contents: read     #Permission to Workflow to read the code of the repo 
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest    #Github will create a temporary ubuntu server and pipeline will run over there and once pipeline runs succesfully the VM gets deleted also
+        
+        environment:
+            name: github-pages                   #default environment for pages deployment
+            url: ${{steps.deployment.outputs.pages_url}}
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4                 #Downloads Repository code in runner machine
+              
+            - name: setup github pages
+              uses: actions/configure-pages@v4          #Github Pages configure environments
+
+            - name: upload static files
+              uses: actions/upload-pages-artifacts@v4   #Stores Website files in artifact form and package is ready for deployment
+
+            - name: Deploy to github pages
+              uses: actions/deploy-pages@v4             #Deploys Artifact on GitHub Pages
+
