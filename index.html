@@ -5,20 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ankita Pandey | DevOps Engineer</title>
 
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
+
+/* GLOBAL STYLES */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 background:#0f172a;
 color:white;
+line-height:1.6;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+section{
+padding:80px 10%;
 }
 
 /* NAVBAR */
@@ -27,10 +43,11 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 80px;
+padding:20px 10%;
 background:#020617;
 position:sticky;
 top:0;
+z-index:100;
 }
 
 nav h2{
@@ -40,13 +57,11 @@ color:#38bdf8;
 nav ul{
 display:flex;
 list-style:none;
-gap:30px;
+gap:25px;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:500;
+nav a:hover{
+color:#38bdf8;
 }
 
 /* HERO */
@@ -58,7 +73,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#0f172a,#1e293b);
+background:linear-gradient(135deg,#020617,#1e293b,#020617);
 }
 
 .hero h1{
@@ -69,31 +84,50 @@ color:#38bdf8;
 .hero p{
 margin-top:10px;
 font-size:20px;
-opacity:0.8;
+max-width:700px;
+opacity:0.85;
+}
+
+.hero-buttons{
+margin-top:25px;
 }
 
 .btn{
-margin-top:30px;
 padding:12px 25px;
+border-radius:8px;
+margin:10px;
+font-weight:600;
+transition:0.3s;
+}
+
+.github{
 background:#38bdf8;
 color:black;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-weight:600;
 }
 
-/* SECTIONS */
-
-section{
-padding:80px 10%;
+.linkedin{
+border:1px solid #38bdf8;
 }
 
-section h2{
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* SECTION TITLES */
+
+.section-title{
 text-align:center;
 margin-bottom:40px;
 font-size:36px;
 color:#38bdf8;
+}
+
+/* ABOUT */
+
+.about{
+max-width:800px;
+margin:auto;
+text-align:center;
 }
 
 /* SKILLS */
@@ -107,21 +141,27 @@ gap:25px;
 .skill-card{
 background:#1e293b;
 padding:30px;
+border-radius:10px;
 text-align:center;
-border-radius:12px;
 transition:0.3s;
 }
 
+.skill-card i{
+font-size:40px;
+margin-bottom:15px;
+color:#38bdf8;
+}
+
 .skill-card:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 background:#334155;
 }
 
 /* PROJECTS */
 
-.project-grid{
+.projects-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
@@ -132,14 +172,40 @@ border-radius:12px;
 transition:0.3s;
 }
 
+.project-card h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
 .project-card:hover{
 transform:scale(1.05);
 background:#334155;
 }
 
-.project-card h3{
+/* DEVOPS TOOLS */
+
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.tool{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.tool i{
+font-size:35px;
 color:#38bdf8;
-margin-bottom:10px;
+}
+
+.tool:hover{
+background:#334155;
+transform:translateY(-5px);
 }
 
 /* CONTACT */
@@ -149,10 +215,9 @@ text-align:center;
 }
 
 .contact a{
-color:#38bdf8;
-text-decoration:none;
 display:block;
 margin:10px;
+color:#38bdf8;
 }
 
 /* FOOTER */
@@ -161,7 +226,21 @@ footer{
 text-align:center;
 padding:20px;
 background:#020617;
-margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
 }
 
 </style>
@@ -169,82 +248,142 @@ margin-top:40px;
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
 <h2>Ankita.dev</h2>
+
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#tools">Tools</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
 
+<!-- HERO SECTION -->
+
 <section class="hero">
+
 <h1>Ankita Pandey</h1>
-<p>DevOps Engineer • Cloud • Automation</p>
-<button class="btn">View My Work</button>
+
+<p>DevOps Engineer building scalable cloud infrastructure and CI/CD pipelines</p>
+
+<div class="hero-buttons">
+
+<a href="https://github.com/AnkitaPandey23" class="btn github"><i class="fab fa-github"></i> GitHub</a>
+
+<a href="#" class="btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+
+</div>
+
 </section>
+
+<!-- ABOUT -->
 
 <section id="about">
-<h2>About Me</h2>
-<p style="text-align:center;max-width:700px;margin:auto;">
-I'm a DevOps enthusiast passionate about cloud computing, automation,
-and scalable infrastructure. I enjoy building CI/CD pipelines,
-containerizing applications, and deploying cloud-native systems.
+
+<h2 class="section-title">About Me</h2>
+
+<p class="about">
+DevOps Engineer with 3.5 years of experience working with cloud infrastructure,
+automation and CI/CD pipelines. Passionate about building reliable,
+scalable systems using containerization, Kubernetes orchestration,
+and infrastructure as code. Skilled in cloud platforms, automation
+and modern DevOps practices to improve deployment efficiency and system reliability.
 </p>
+
 </section>
 
+<!-- SKILLS -->
+
 <section id="skills">
-<h2>Technical Skills</h2>
+
+<h2 class="section-title">Skills</h2>
 
 <div class="skills-grid">
 
-<div class="skill-card">Linux</div>
-<div class="skill-card">Git</div>
-<div class="skill-card">Docker</div>
-<div class="skill-card">Kubernetes</div>
-<div class="skill-card">Terraform</div>
-<div class="skill-card">AWS</div>
-<div class="skill-card">Jenkins</div>
-<div class="skill-card">GitHub Actions</div>
-<div class="skill-card">Networking</div>
+<div class="skill-card"><i class="fab fa-linux"></i><p>Linux</p></div>
+<div class="skill-card"><i class="fa-solid fa-network-wired"></i><p>Networking</p></div>
+<div class="skill-card"><i class="fab fa-docker"></i><p>Docker</p></div>
+<div class="skill-card"><i class="fa-solid fa-dharmachakra"></i><p>Kubernetes</p></div>
+<div class="skill-card"><i class="fa-solid fa-cloud"></i><p>AWS</p></div>
+<div class="skill-card"><i class="fa-solid fa-cloud"></i><p>Azure</p></div>
+<div class="skill-card"><i class="fa-solid fa-code-branch"></i><p>Terraform</p></div>
+<div class="skill-card"><i class="fa-solid fa-gears"></i><p>Jenkins</p></div>
+<div class="skill-card"><i class="fab fa-github"></i><p>GitHub Actions</p></div>
+<div class="skill-card"><i class="fa-solid fa-arrows-rotate"></i><p>CI/CD</p></div>
 
 </div>
 
 </section>
+
+<!-- PROJECTS -->
 
 <section id="projects">
 
-<h2>Projects</h2>
+<h2 class="section-title">Projects</h2>
 
-<div class="project-grid">
+<div class="projects-grid">
 
 <div class="project-card">
-<h3>AI Bank App DevOps</h3>
-<p>Dockerized banking application with CI/CD pipeline and automated deployment.</p>
+<h3>AI Bank App DevOps Pipeline</h3>
+<p>Built CI/CD pipeline using Docker, GitHub Actions and automated deployments.</p>
+<a href="https://github.com/AnkitaPandey23">View on GitHub</a>
 </div>
 
 <div class="project-card">
-<h3>Flask ECS Deployment</h3>
-<p>Containerized Flask application deployed on AWS ECS using Docker.</p>
+<h3>Flask App on AWS ECS</h3>
+<p>Containerized Flask application deployed using AWS ECS and Docker.</p>
+<a href="https://github.com/AnkitaPandey23">View on GitHub</a>
 </div>
 
 <div class="project-card">
-<h3>DevOps Pipeline</h3>
-<p>CI/CD pipeline using GitHub Actions, Docker, and Kubernetes deployment.</p>
+<h3>Kubernetes Deployment</h3>
+<p>Deployed containerized microservices application using Kubernetes.</p>
+<a href="https://github.com/AnkitaPandey23">View on GitHub</a>
 </div>
 
 </div>
 
 </section>
 
-<section id="contact" class="contact">
+<!-- DEVOPS TOOLS -->
 
-<h2>Contact</h2>
+<section id="tools">
 
-<a href="mailto:ankita@example.com">Email</a>
+<h2 class="section-title">DevOps Tools</h2>
+
+<div class="tools-grid">
+
+<div class="tool"><i class="fab fa-docker"></i><p>Docker</p></div>
+<div class="tool"><i class="fa-solid fa-dharmachakra"></i><p>Kubernetes</p></div>
+<div class="tool"><i class="fab fa-aws"></i><p>AWS</p></div>
+<div class="tool"><i class="fab fa-github"></i><p>GitHub</p></div>
+<div class="tool"><i class="fa-solid fa-code-branch"></i><p>Terraform</p></div>
+<div class="tool"><i class="fa-solid fa-gears"></i><p>Jenkins</p></div>
+<div class="tool"><i class="fa-solid fa-server"></i><p>Linux</p></div>
+<div class="tool"><i class="fa-solid fa-network-wired"></i><p>Networking</p></div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+
+<p>Email: ankita@example.com</p>
+
 <a href="https://github.com/AnkitaPandey23">GitHub</a>
-<a href="#">LinkedIn</a>
+
+</div>
 
 </section>
 
