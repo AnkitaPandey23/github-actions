@@ -1,131 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ankita Pandey | DevOps Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            margin:0;
-            background:#f4f4f4;
-        }
+<title>Ankita Pandey | DevOps Engineer</title>
 
-        header{
-            background:#333;
-            color:white;
-            padding:20px;
-            text-align:center;
-        }
+<script src="https://cdn.tailwindcss.com"></script>
 
-        nav{
-            background:#555;
-            padding:10px;
-            text-align:center;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        nav a{
-            color:white;
-            margin:0 15px;
-            text-decoration:none;
-            font-weight:bold;
-        }
+<style>
+body{
+font-family:'Poppins',sans-serif;
+background:#0b0b0f;
+}
 
-        section{
-            padding:30px;
-            max-width:900px;
-            margin:auto;
-            background:white;
-            margin-top:20px;
-            border-radius:8px;
-        }
+.gradient-text{
+background: linear-gradient(90deg,#ff4ecd,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+</style>
 
-        h2{
-            color:#333;
-        }
-
-        ul{
-            line-height:1.8;
-        }
-
-        footer{
-            background:#333;
-            color:white;
-            text-align:center;
-            padding:10px;
-            margin-top:20px;
-        }
-
-        .project{
-            background:#fafafa;
-            padding:15px;
-            margin:10px 0;
-            border-left:4px solid #333;
-        }
-    </style>
 </head>
 
-<body>
+<body class="text-white">
 
-<header>
-    <h1>Ankita Pandey</h1>
-    <p>DevOps Engineer | Cloud | Automation</p>
-</header>
+<!-- NAVBAR -->
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+<header class="flex justify-between items-center px-12 py-6">
+
+<h1 class="text-xl font-semibold">Ankita Pandey</h1>
+
+<nav class="space-x-8 text-sm text-gray-300">
+<a href="#about" class="hover:text-pink-400">About</a>
+<a href="#skills" class="hover:text-pink-400">Skills</a>
+<a href="#projects" class="hover:text-pink-400">Projects</a>
+<a href="#contact" class="hover:text-pink-400">Contact</a>
 </nav>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        Hello! I'm Ankita, a DevOps enthusiast passionate about cloud technologies,
-        automation, and building scalable infrastructure.
-        I enjoy working with Linux, Docker, Kubernetes, and CI/CD pipelines.
-    </p>
+</header>
+
+
+<!-- HERO -->
+
+<section class="min-h-screen flex items-center justify-center text-center px-6">
+
+<div>
+
+<h1 class="text-6xl font-bold leading-tight">
+
+Hi, I'm  
+<span class="gradient-text">Ankita Pandey</span>
+
+</h1>
+
+<p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
+
+DevOps Engineer focused on automation, scalable infrastructure,
+and CI/CD pipelines.
+
+</p>
+
+<div class="mt-8 flex justify-center gap-6">
+
+<a href="https://github.com/AnkitaPandey23"
+class="px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500">
+
+GitHub
+
+</a>
+
+<a href="#projects"
+class="border border-gray-600 px-6 py-3 rounded-lg hover:border-pink-400">
+
+Projects
+
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>Linux</li>
-        <li>Git & GitHub</li>
-        <li>Docker</li>
-        <li>Kubernetes</li>
-        <li>Terraform</li>
-        <li>AWS / Cloud</li>
-        <li>Jenkins & GitHub Actions</li>
-        <li>Networking Fundamentals</li>
-    </ul>
-</section>
 
-<section id="projects">
-    <h2>Projects</h2>
+<!-- ABOUT -->
 
-    <div class="project">
-        <h3>AI Bank App - DevOps Deployment</h3>
-        <p>Containerized banking application using Docker and deployed using CI/CD pipeline.</p>
-    </div>
+<section id="about" class="py-24 max-w-4xl mx-auto text-center px-6">
 
-    <div class="project">
-        <h3>Flask App on ECS</h3>
-        <p>Deployed Flask application on AWS ECS using Docker containers.</p>
-    </div>
+<h2 class="text-3xl font-semibold mb-6 gradient-text">
+
+About Me
+
+</h2>
+
+<p class="text-gray-400 leading-8">
+
+DevOps Engineer with 3.5 years of experience working with Linux,
+Docker, Kubernetes and cloud technologies. Passionate about
+automating infrastructure and building efficient CI/CD pipelines.
+
+</p>
 
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: ankita@example.com</p>
-    <p>GitHub: https://github.com/AnkitaPandey23</p>
-    <p>LinkedIn: https://linkedin.com</p>
+
+<!-- SKILLS -->
+
+<section id="skills" class="py-24 px-10">
+
+<h2 class="text-3xl font-semibold text-center mb-16 gradient-text">
+
+Skills
+
+</h2>
+
+<div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+Linux
+</div>
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+Docker
+</div>
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+Kubernetes
+</div>
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+Terraform
+</div>
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+AWS
+</div>
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+Azure
+</div>
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+Jenkins
+</div>
+
+<div class="bg-gray-900 p-8 rounded-xl hover:scale-105 transition text-center border border-gray-800">
+GitHub Actions
+</div>
+
+</div>
+
 </section>
 
-<footer>
-    <p>© 2026 Ankita Pandey | Portfolio</p>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="py-24 px-10">
+
+<h2 class="text-3xl font-semibold text-center mb-16 gradient-text">
+
+Projects
+
+</h2>
+
+<div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+<div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:scale-105 transition">
+
+<h3 class="text-xl font-semibold mb-3">
+AI Bank App DevOps
+</h3>
+
+<p class="text-gray-400">
+CI/CD pipeline using Docker, Jenkins and GitHub Actions.
+</p>
+
+</div>
+
+
+<div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:scale-105 transition">
+
+<h3 class="text-xl font-semibold mb-3">
+Flask App on ECS
+</h3>
+
+<p class="text-gray-400">
+Containerized application deployed using AWS ECS.
+</p>
+
+</div>
+
+
+<div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:scale-105 transition">
+
+<h3 class="text-xl font-semibold mb-3">
+Kubernetes Deployment
+</h3>
+
+<p class="text-gray-400">
+Dockerized application deployed on Kubernetes cluster.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="py-24 text-center">
+
+<h2 class="text-3xl font-semibold mb-6 gradient-text">
+
+Contact
+
+</h2>
+
+<p class="text-gray-400 mb-6">
+
+Let's connect on GitHub
+
+</p>
+
+<a href="https://github.com/AnkitaPandey23"
+class="px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500">
+
+GitHub
+
+</a>
+
+</section>
+
+
+<footer class="text-center py-8 text-gray-500">
+
+© 2026 Ankita Pandey
+
 </footer>
 
 </body>
