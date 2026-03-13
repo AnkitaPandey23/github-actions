@@ -16,7 +16,7 @@ jobs:
         
         environment:
             name: github-pages                   #default environment for pages deployment
-            url: ${{steps.deployment.outputs.pages_url}}
+            url: ${{steps.deployment.outputs.pages_url}}   #URL of the deployed website which will be available after deployment is successful
 
         steps:
             - name: Checkout code
