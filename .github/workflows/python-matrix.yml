@@ -1,26 +1,29 @@
-name: Python lint
+name: Python lint   #Nmae of the workflow
 
 on:
     push:
-        branches: [main]
-    workflow_dispatch:
+        branches: [main]   #Workflow will run when there is a push on main branch
+    workflow_dispatch:     #Workflow can also be triggered manually from GitHub UI
 
-jobs:
-    validate:
-        runs-on: ubuntu-latest
+jobs:                      
+    validate:                             #Name of the job
+        runs-on: ubuntu-latest            #Github will create a temporary ubuntu server and pipeline will run over there and once pipeline runs succesfully the VM gets deleted also
+        strategy:                         #Defines a matrix of different Python versions to test against
+            matrix:                       
+                python-version: [3.9, 3.10, 3.11, 3.12, 3.13]      #List of Python versions to test against
         
-        steps:
+        steps:                                                     #Steps to be executed in the job
             - name: checkout code
               uses: actions/checkout@v4
 
-            - name: setup python 3.13
+            - name: setup python ${{matrix.python-version}}        
               uses: actions/setup-python@v5
               with:
-                    python-version: 3.13
+                    python-version: ${{matrix.python-version}}    #Sets up the specified Python version in the runner environment
 
             - name: install dependencies
-              run: pip install -r requirements.txt
+              run: pip install -r requirements.txt  
 
-            - name: run linetr
-              run: flake8 app.py
+            - name: run linter
+              run: flake8 app.py    #Runs the flake8 linter on the app.py file to check for code style and quality issues
             
