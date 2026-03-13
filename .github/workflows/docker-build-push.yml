@@ -23,6 +23,6 @@ jobs:
                 context: .                          #Use the current directory as the build context for the Docker image
                 push: true                          #Push the built image to Docker Hub after building
                 tags: |                             #Tag the Docker image with multiple tags: branch name, commit SHA, and 'latest'
-                    ${{vars.DOCKERHUB_USER}}/github-actions-app:${{ github.ref }}     
+                    ${{vars.DOCKERHUB_USER}}/github-actions-app:${{ github.ref_name }}
                     ${{vars.DOCKERHUB_USER}}/github-actions-app:${{github.sha}}
                     ${{vars.DOCKERHUB_USER}}/github-actions-app:latest
