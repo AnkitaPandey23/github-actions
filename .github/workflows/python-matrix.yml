@@ -1,8 +1,8 @@
 name: Python lint   #Nmae of the workflow
 
 on:
-    push:
-        branches: [main]   #Workflow will run when there is a push on main branch
+    #push:
+        #branches: [main]   #Workflow will run when there is a push on main branch
     workflow_dispatch:     #Workflow can also be triggered manually from GitHub UI
 
 jobs:                      
