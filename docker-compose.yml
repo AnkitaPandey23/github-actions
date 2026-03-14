@@ -1,5 +1,5 @@
 services:               #defining services for docker-compose
     web:               #service name
-     image: ${DOCKERHUB_USER}/github-actions-app:latest  #taking latest image from Docker Hub, where DOCKERHUB_USER is an environment variable that should be set to Docker Hub username
+     image: ${DOCKERHUB_USER}/github-actions-app:${docker_TAG}  #taking latest image from Docker Hub, where DOCKERHUB_USER is an environment variable that should be set to Docker Hub username
      ports:
       - "80:80"    
