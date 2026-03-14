@@ -1,0 +1,20 @@
+name: Deploy Flask App
+
+on: 
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        runs-on: self-hosted         #Use self-hosted runner (VM) where the application will be deployed
+        env:
+            DOCKERHUB_USER: ${{vars.DOCKERHUB_USER}}      #Environment variable for Docker Hub username, can be used in the workflow steps
+
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: setup docker compose (optional)       #Setup Docker Compose on the self-hosted runner if it's not already installed, using the official GitHub Action for Docker Compose
+              uses: docker/setup-compose-action@v2
+
+            - name: deploy with docker compose
+              run: docker compose down && docker compose up -d --build --force-recreate --pull always  
