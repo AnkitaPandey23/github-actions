@@ -1,7 +1,11 @@
 name: Deploy Flask App
 
 on: 
-    workflow_dispatch:
+    workflow_run:          #Trigger the workflow when workflow "docker-build-push" is completed
+        workflows: ["Docker build & Push"]       #Name of the workflow to listen for
+        types: [completed]                       #Trigger only when the specified workflow is completed
+        branches: [main]                         
+
 
 jobs:
     deploy:
