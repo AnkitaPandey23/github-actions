@@ -1,0 +1,29 @@
+name: Code Quality                 #Name of the workflow
+
+on:
+    workflow_call:                   #will not trigger until called by another workflow, gives reusable workflow
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                python-version: ["3.11","3.12","3.13"]
+
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: setup python ${{matrix.python-version}}
+              uses: actions/setup-python@v5
+              with:
+                python-version: ${{matrix.python-version}}
+
+            - name: install dependencies
+              run: pip install -r requirements.txt
+
+            - name: run linter       #to check for code style and quality issues
+              run: flake8 app.py     
+
+            - name: run SAST          #Static Application Security Testing
+              run : bandit -r app.py    #Runs the Bandit security linter on the app.py file to check for security vulnerabilities in the code
