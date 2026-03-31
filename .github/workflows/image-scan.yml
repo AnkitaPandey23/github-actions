@@ -13,13 +13,12 @@ jobs:
             - name: login to dockerhub
               uses: docker/login-action@v3
               with:
-                username: ${{var.DOCKERHUB_USER}}
-                password: ${{secrets.DOCKERHUB_TOKEN}}
+                username: ${{ vars.DOCKERHUB_USER }}
+                password: ${{ secrets.DOCKERHUB_TOKEN }}
 
             - name: Trivy Scanner
               uses: aquasecurity/trivy-action@0.35.0
               with:
-                image-ref: ${{vars.DOCKERHUB_USER}}/github-action-app: ${{github-sha}}
+                image-ref: ${{ vars.DOCKERHUB_USER }}/github-action-app:${{ github.sha }}
                 severity: 'CRITICAL,HIGH'
                 exit-code: '1'
-                trivyignore: ${{github.workspace}}/.trivyignore
