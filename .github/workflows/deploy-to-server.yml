@@ -15,4 +15,4 @@ jobs:
                 key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
                 script: |
                   echo "Testing whether server is able to ssh server or not"
-                  mkdir devops
+                  mkdir -p devops
