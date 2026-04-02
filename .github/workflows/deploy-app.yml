@@ -21,4 +21,5 @@ jobs:
               uses: docker/setup-compose-action@v2
 
             - name: deploy with docker compose
-              run: docker compose down && docker compose up -d --build --force-recreate --pull always  
+              run: docker compose down && docker compose up -d --build --force-recreate --pull always   #Stop any running containers, then start new ones in detached mode, rebuilding images if necessary, forcing recreation of containers, and always pulling the latest images from the registry
+
