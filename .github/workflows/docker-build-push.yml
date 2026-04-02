@@ -2,7 +2,7 @@ name: Docker build & Push                   #Name of the workflow
 on:
     #push:
         #branches: [main]   #Workflow will run when there is a push on main branch
-    workflow_dispatch:                   #Workflow will run when triggered manually
+    workflow_call:                   #Workflow will be triggered when called by another workflow
 
 jobs:
     build-and-push:                          #Job Name
