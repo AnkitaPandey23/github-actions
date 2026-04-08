@@ -5,14 +5,41 @@ on:
 
 jobs:
     deploy:
-        runs-on: ubunyu-latest
+        runs-on: ubuntu-latest
         steps:
-            - name: SSH to Prod Server
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: SSH to Prod Server & create app folder
               uses: appleboy/ssh-action@v1.0.3
               with:
                 host: ${{secrets.EC2_SSH_HOST}}
                 username: ${{secrets.EC2_SSH_USER}}
                 key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
                 script: |
-                  echo "Testing whether server is able to ssh server or not"
+                  echo "Installing required packages & folder"
+                  sudo apt-get update && sudo apt-get install docker.io docker-compose-v2 -y
+                  sudo usermod -aG docker $USER
                   mkdir -p devops
+
+            - name: copy the docker-compose file
+              uses: appleboy/scp-action@v1
+              with: 
+                host: ${{secrets.EC2_SSH_HOST}}
+                username: ${{secrets.EC2_SSH_USER}}
+                key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
+                source: docker-compose.yml
+                target: ~/devops
+
+            - name: SSH to prod server and run the app
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                host: ${{secrets.EC2_SSH_HOST}}
+                username: ${{secrets.EC2_SSH_USER}}
+                key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
+                script: |
+                    echo "running app"
+                    export DOCKERHUB_USER= ${{vars.DOCKERHUB_USER}}
+                    export DOCKERHUB_TAG= ${{github.sha}}
+                    echo ${{secrets.DOCKERHUB_TOKEN}} | docker login --username ${{vars.DOCKERHUB_USER}} --password-stdin
+                    cd ~/devops & docker compose down && dcker compose up -d --build --force -recreate --pull always
