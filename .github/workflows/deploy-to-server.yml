@@ -42,4 +42,10 @@ jobs:
                     export DOCKERHUB_USER=${{vars.DOCKERHUB_USER}}
                     export DOCKER_TAG=${{github.sha}}
                     echo ${{secrets.DOCKERHUB_TOKEN}} | docker login --username ${{vars.DOCKERHUB_USER}} --password-stdin
+                    echo "Stopping old container"
+                    docker stop my-app || true
+                    docker rm my-app || true
+
+                    echo "Removing old images (optional)"
+                    docker system prune -af || true
                     cd ~/devops && docker compose down && docker compose up -d --build --force-recreate --pull always
