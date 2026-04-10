@@ -43,8 +43,8 @@ jobs:
                     export DOCKER_TAG=${{github.sha}}
                     echo ${{secrets.DOCKERHUB_TOKEN}} | docker login --username ${{vars.DOCKERHUB_USER}} --password-stdin
                     echo "Stopping old container"
-                    docker stop my-app || true
-                    docker rm my-app || true
+                    docker stop github-actions-app || true
+                    docker rm github-actions-app || true
 
                     echo "Removing old images (optional)"
                     docker system prune -af || true
