@@ -2,4 +2,4 @@ services:               #defining services for docker-compose
     web:               #service name
      image: ${DOCKERHUB_USER}/github-actions-app:${DOCKER_TAG} #using SHA tag to pull the specific image built in the previous workflow
      ports:            #mapping ports for the web service 
-      - "80:80"        #mapping port 80 of the container to port 80 of the host machine
+      - "80:5000"        #mapping port 80 of the container to port 80 of the host machine
